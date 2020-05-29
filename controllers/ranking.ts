@@ -31,7 +31,7 @@ router.get('/', (req: Request, res: Response) => {
 });
 
 router.get('/:idJogo', (req: Request, res: Response) => {
-    let ranking = rankingTable.find({ idJogo: req.params.idJogo });
+    let ranking = rankingTable.find({ idJogo: parseInt(req.params.idJogo) });
     if (!ranking) {
         return res.status(404).send();
     }
